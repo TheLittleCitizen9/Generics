@@ -6,7 +6,16 @@ namespace Generics
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            DataFlow dataFlow = new DataFlow();
+            UpperCaseBlock upperCaseBlock = new UpperCaseBlock();
+            ReverseBlock reverseBlock = new ReverseBlock();
+            ReplaceAWithSixBlock replaceAWithSixBlock = new ReplaceAWithSixBlock();
+
+            dataFlow.AddBlock(upperCaseBlock);
+            dataFlow.AddBlock(reverseBlock);
+            dataFlow.AddBlock(replaceAWithSixBlock);
+
+            Console.WriteLine(dataFlow.RunFlow("dar"));
         }
     }
 }

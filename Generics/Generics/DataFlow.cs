@@ -22,11 +22,10 @@ namespace Generics
             {
                 return Blocks[0].Process(input);
             }
-            string output = String.Empty;
-            for (int i = 0; i < Blocks.Count - 1; i++)
+            string output = input;
+            for (int i = 0; i < Blocks.Count; i++)
             {
-                string temp = Blocks[i].Process(input);
-                output = Blocks[i + 1].Process(temp);
+                output = Blocks[i].Process(output);
             }
 
             return output;
